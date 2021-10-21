@@ -9,7 +9,7 @@
 </head>
 <body>
 <article>
-    <h1><a href="/post">My First Post</a></h1>
+    <h1><a href="/post/my-first-post">My First Post</a></h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum iste officiis possimus cumque sit velit quasi sint
         iusto saepe suscipit dicta, laudantium consectetur, rerum sunt, ducimus nobis tenetur aliquid. Saepe delectus
         voluptates minus ipsa impedit obcaecati earum fugiat corporis dolorem? Unde deleniti possimus illum iure esse
@@ -20,7 +20,7 @@
 </article>
 
 <article>
-    <h1><a href="/post">My Second Post</a></h1>
+    <h1><a href="/post/my-second-post">My Second Post</a></h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum iste officiis possimus cumque sit velit quasi sint
         iusto saepe suscipit dicta, laudantium consectetur, rerum sunt, ducimus nobis tenetur aliquid. Saepe delectus
         voluptates minus ipsa impedit obcaecati earum fugiat corporis dolorem? Unde deleniti possimus illum iure esse
