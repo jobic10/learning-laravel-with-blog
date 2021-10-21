@@ -19,8 +19,7 @@ Route::get('/', function () {
 
 
 Route::get('post/{post}', function ($slug) {
-    $path = __DIR__ . "/../resources/posts/{$slug}.html";
-    if (!file_exists($path)) {
+    if (!file_exists($path =  __DIR__ . "/../resources/posts/{$slug}.html")) {
         abort(404);
     }
 
