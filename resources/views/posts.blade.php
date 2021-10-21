@@ -9,25 +9,9 @@
 </head>
 <body>
 <article>
-    <h1><a href="/post/my-first-post">My First Post</a></h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum iste officiis possimus cumque sit velit quasi sint
-        iusto saepe suscipit dicta, laudantium consectetur, rerum sunt, ducimus nobis tenetur aliquid. Saepe delectus
-        voluptates minus ipsa impedit obcaecati earum fugiat corporis dolorem? Unde deleniti possimus illum iure esse
-        cum iusto dignissimos dolor aliquid maiores, nihil obcaecati magnam vel fugit delectus nesciunt in repellat
-        nobis id voluptatibus commodi ratione? Minus magni facere rerum omnis fugiat nostrum eligendi suscipit excepturi
-        quaerat. Commodi quasi unde, rerum recusandae doloremque sint sed repellat delectus eaque obcaecati tempore
-        animi deleniti, blanditiis amet quae, consequuntur nisi in eveniet aspernatur.</p>
-</article>
-
-<article>
-    <h1><a href="/post/my-second-post">My Second Post</a></h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum iste officiis possimus cumque sit velit quasi sint
-        iusto saepe suscipit dicta, laudantium consectetur, rerum sunt, ducimus nobis tenetur aliquid. Saepe delectus
-        voluptates minus ipsa impedit obcaecati earum fugiat corporis dolorem? Unde deleniti possimus illum iure esse
-        cum iusto dignissimos dolor aliquid maiores, nihil obcaecati magnam vel fugit delectus nesciunt in repellat
-        nobis id voluptatibus commodi ratione? Minus magni facere rerum omnis fugiat nostrum eligendi suscipit excepturi
-        quaerat. Commodi quasi unde, rerum recusandae doloremque sint sed repellat delectus eaque obcaecati tempore
-        animi deleniti, blanditiis amet quae, consequuntur nisi in eveniet aspernatur.</p>
+<?php foreach ($posts as $post): ?>
+<?= $post ?>
+<?php endforeach ?>
 </article>
 </body>
 </html>
