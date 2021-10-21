@@ -14,14 +14,12 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    $posts = Post::all();
-    return view('posts', ['posts' => $posts]);
+    return view('posts', ['posts' => Post::all()]);
 });
 
 
 Route::get('post/{post}', function ($slug) {
-    $post = Post::find($slug);
     return view('post', [
-        'post' => $post
+        'post' => Post::find($slug)
     ]);
 })->where('post', '[A-z\-]+');
