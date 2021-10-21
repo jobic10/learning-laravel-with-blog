@@ -12,8 +12,7 @@ class Post
         if (!file_exists($path = (resource_path("posts/{$slug}.html")))) {
             throw new ModelNotFoundException();
         }
-        return
-            cache()->remember("post.{$slug}", now()->addSecond(3), fn () => file_get_contents($path));
+        return cache()->remember("post.{$slug}", now()->addSecond(3), fn () => file_get_contents($path));
     }
 
     public static function all()
