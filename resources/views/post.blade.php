@@ -9,9 +9,7 @@
 </p>
 </article>
 <x-skeleton >
-<x-slot name='name'>
-    <h4>This is much better </h4>
-</x-slot>
+    This is much bette
 </x-skeleton>
 <a href="/">Go back</a>
 </body>
