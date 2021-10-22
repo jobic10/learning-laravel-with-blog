@@ -8,8 +8,10 @@
 {!! $post->body !!}
 </p>
 </article>
-<x-skeleton name="Ske">
-
+<x-skeleton >
+<x-slot name='name'>
+    <h4>This is much better </h4>
+</x-slot>
 </x-skeleton>
 <a href="/">Go back</a>
 </body>
