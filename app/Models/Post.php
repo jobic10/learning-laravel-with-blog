@@ -31,7 +31,7 @@ class Post
             fn ($file) => YamlFrontMatter::parseFile($file)
         )->map(
             fn ($doc) => new Post($doc->title, $doc->excerpt, $doc->date, $doc->slug, $doc->body())
-        );
+        )->sortByDesc('date');
     }
     public static function find($slug)
     {
