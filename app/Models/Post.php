@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\File;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class Post
 {
@@ -33,7 +34,11 @@ class Post
 
     public static function all()
     {
-        $posts = File::files(resource_path('posts/'));
-        return array_map(fn ($post) => $post->getContents(), $posts);
+        $posts = collect(File::files(resource_path('posts/')))->map(
+            fn ($file) => YamlFrontMatter::parseFile($file)
+        )->map(
+            fn ($doc) => new Post($doc->title, $doc->excerpt, $doc->date, $doc->slug, $doc->body())
+        );
+        return $posts;
     }
 }
