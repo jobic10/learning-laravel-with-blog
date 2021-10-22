@@ -34,11 +34,10 @@ class Post
 
     public static function all()
     {
-        $posts = collect(File::files(resource_path('posts/')))->map(
+        return  collect(File::files(resource_path('posts/')))->map(
             fn ($file) => YamlFrontMatter::parseFile($file)
         )->map(
             fn ($doc) => new Post($doc->title, $doc->excerpt, $doc->date, $doc->slug, $doc->body())
         );
-        return $posts;
     }
 }
