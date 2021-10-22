@@ -14,7 +14,7 @@ class Post
     public $slug;
 
 
-    public function __construct($title, $excerpt, $date, $body, $slug)
+    public function __construct($title, $excerpt, $date, $slug, $body)
     {
         $this->title = $title;
         $this->excerpt = $excerpt;
