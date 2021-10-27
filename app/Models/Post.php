@@ -27,6 +27,7 @@ class Post
 
     public static function all()
     {
+        // Parse and cache all posts in the resources/posts folder forever
         return cache()->rememberForever('posts.all', function () {
             return  collect(File::files(resource_path('posts/')))->map(
                 fn ($file) => YamlFrontMatter::parseFile($file)
