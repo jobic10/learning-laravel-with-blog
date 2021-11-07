@@ -17,10 +17,8 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    DB::listen(function ($query) {
-        logger($query->sql, $query->bindings);
-    });
-    $posts = Post::all();
+    $posts = Post::with('category')->get();
+
     return view('posts', ['posts' => $posts]);
 });
 
