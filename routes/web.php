@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -33,5 +34,11 @@ Route::get('post/{post}', function (Post $post) {
 Route::get('/category/{category:slug}', function (Category $category) {
     return view('posts', [
         'posts' => $category->posts
+    ]);
+});
+
+Route::get('/user/{user}', function (User $user) {
+    return view('posts', [
+        'posts' => $user->posts
     ]);
 });
