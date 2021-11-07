@@ -5,7 +5,7 @@
    <article>
        <h1><a href="/post/{{ $post->slug }}"><?= $post->title ?></a></h1>
        <p>
-       By <a href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a> in <a href="/category/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+       By <a href="/user/{{ $post->author->id }}">{{ $post->author->name }}</a> in <a href="/category/{{ $post->category->slug }}">{{ $post->category->name }}</a>
        </p>
        <p>
            {{ $post->excerpt }}
