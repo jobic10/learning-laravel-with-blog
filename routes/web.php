@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    $posts = Post::with('category')->get();
+    $posts = Post::with('category', 'user')->get();
 
     return view('posts', ['posts' => $posts]);
 });
