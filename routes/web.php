@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,11 @@ Route::get('/', function () {
 Route::get('post/{post}', function (Post $post) {
     return view('post', [
         'post' => $post
+    ]);
+});
+
+Route::get('/category/{category:slug}', function (Category $category) {
+    return view('posts', [
+        'posts' => $category->posts
     ]);
 });
