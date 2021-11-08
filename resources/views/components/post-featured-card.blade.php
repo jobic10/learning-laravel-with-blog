@@ -30,7 +30,7 @@
 
             <div class="mt-2 text-sm">
                 <p>
-                   {{ $post->excerpt }}
+                    {{ $post->excerpt }}
                 </p>
 
 
