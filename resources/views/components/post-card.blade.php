@@ -1,6 +1,6 @@
 @props(['post'])
-<article
-    class="transition-colors duration-300 border border-black border-opacity-0 hover:bg-gray-100 hover:border-opacity-5 rounded-xl">
+<article {{ $attributes->merge(['class'=>"transition-colors duration-300 border border-black border-opacity-0
+    hover:bg-gray-100 hover:border-opacity-5 rounded-xl"]) }}>
     <div class="px-5 py-6">
         <div>
             <img src="/images/illustration-3.png" alt="Blog Post illustration" class="rounded-xl">
@@ -27,7 +27,7 @@
 
             <div class="mt-4 text-sm">
                 <p>
-                   {{ $post->excerpt }}
+                    {{ $post->excerpt }}
                 </p>
 
 
