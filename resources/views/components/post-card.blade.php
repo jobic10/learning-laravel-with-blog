@@ -16,7 +16,7 @@
 
                 <div class="mt-4">
                     <h1 class="text-3xl">
-                        {{ $post->title }}
+                        <a href="/post/{{ $post->slug }}">{{ $post->title }}</a>
                     </h1>
 
                     <span class="block mt-2 text-xs text-gray-400">
