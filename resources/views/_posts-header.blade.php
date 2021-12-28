@@ -14,8 +14,9 @@
         <!--  Category -->
         <div class="relative flex items-center bg-gray-100 lg:inline-flex rounded-xl">
             <div x-data="{ show: false }">
-                <button class="py-2 pr-9  pl-3 text-sm font-semibold" @click="show = !show">Categories</button>
-                <div x-show="show" class="py-2 absolute w-full bg-gray-100 mt-2 rounded">
+                <button class="py-2 w-full pr-9  pl-3 text-sm font-semibold" @click="show = !show">Categories</button>
+                <div x-show="show" class="py-2 text-left absolute w-full bg-gray-100 mt-2 rounded z-50"
+                    style="display: none">
                     <a href="#"
                         class="block text-left px-3 text-sm  leading-5 hover:bg-blue-500 focus:bg-blue-500 focus:text-white hover:text-white">One</a>
                     <a href="#"
