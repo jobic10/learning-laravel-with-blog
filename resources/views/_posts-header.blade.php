@@ -13,9 +13,9 @@
     <div class="mt-8 space-y-2 lg:space-y-0 lg:space-x-4">
         <!--  Category -->
         <div class="relative flex items-center bg-gray-100 lg:inline-flex rounded-xl">
-            <div class="">
+            <div x-data="{ show: false }">
                 <button>Categories</button>
-                <div>
+                <div x-show="show">
                     <a href="#">One</a>
                     <a href="#">Two</a>
                 </div>
