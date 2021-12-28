@@ -14,10 +14,12 @@
         <!--  Category -->
         <div class="relative flex items-center bg-gray-100 lg:inline-flex rounded-xl">
             <div x-data="{ show: false }">
-                <button>Categories</button>
-                <div x-show="show">
-                    <a href="#">One</a>
-                    <a href="#">Two</a>
+                <button class="py-2 pr-9  pl-3 text-sm font-semibold" @click="show = !show">Categories</button>
+                <div x-show="show" class="py-2 absolute w-full bg-gray-100 mt-2 rounded">
+                    <a href="#"
+                        class="block text-left px-3 text-sm  leading-5 hover:bg-blue-500 focus:bg-blue-500 focus:text-white hover:text-white">One</a>
+                    <a href="#"
+                        class="block text-left px-3 text-sm  leading-5 hover:bg-blue-500 focus:bg-blue-500 focus:text-white hover:text-white">Two</a>
                 </div>
             </div>
             {{-- <select class="flex-1 py-2 pl-3 text-sm font-semibold bg-transparent appearance-none pr-9">
