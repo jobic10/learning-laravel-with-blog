@@ -32,8 +32,7 @@
                 <x-dropdown-item href="/">All</x-dropdown-item>
 
                 @foreach ($categories as $category)
-                <x-dropdown-item
-                    class="{{ isset($currentCategory) && $currentCategory->is($category) ? 'bg-blue-500 text-white':''}}"
+                <x-dropdown-item :active="isset($currentCategory) && $currentCategory->is($category)"
                     href="/category/{{ $category->slug }}">{{ ucwords($category->name) }}</x-dropdown-item>
                 @endforeach
             </x-dropdown>
