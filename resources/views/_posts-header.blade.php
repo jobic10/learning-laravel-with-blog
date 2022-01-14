@@ -17,7 +17,7 @@
                 @slot('trigger')
                 <button class="inline-flex flex lg:inline-flex w-32 py-2 pr-9  pl-3 text-sm font-semibold">
                     {{ isset($currentCategory) ? ucwords($currentCategory->name) : 'Categories'}}
-                    <x-down-arrow style="right: 12px;" class="absolute pointer-events-none"></x-down-arrow>
+                    <x-icon name='down-arrow' style="right: 12px;" class="absolute pointer-events-none"></x-icon>
                 </button>
                 @endslot
                 <x-dropdown-item href="/" :active="request()->routeIs('home')">All</x-dropdown-item>
