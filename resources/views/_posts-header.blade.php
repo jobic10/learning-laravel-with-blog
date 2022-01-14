@@ -29,7 +29,7 @@
                     </svg>
                 </button>
                 @endslot
-                <x-dropdown-item href="/">All</x-dropdown-item>
+                <x-dropdown-item href="/" :active="request()->routeIs('home')">All</x-dropdown-item>
 
                 @foreach ($categories as $category)
                 <x-dropdown-item :active="request()->is('category/'.$category->slug)"
