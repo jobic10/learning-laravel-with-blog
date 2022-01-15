@@ -17,7 +17,12 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
-    return view('posts', ['posts' => Post::latest()->get(), 'categories' => Category::all()]);
+    $posts = Post::latest();
+    $search = request('search');
+    if ($search) {
+        $posts->where('title', 'like', "%$search%");
+    }
+    return view('posts', ['posts' => $posts->get(), 'categories' => Category::all()]);
 })->name('home');
 
 
