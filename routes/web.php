@@ -20,7 +20,7 @@ Route::get('/', function () {
     $posts = Post::latest();
     $search = request('search');
     if ($search) {
-        $posts->where('title', 'like', "%$search%");
+        $posts->where('title', 'like', "%$search%")->orWhere('body', 'like', "%$search%");
     }
     return view('posts', ['posts' => $posts->get(), 'categories' => Category::all()]);
 })->name('home');
