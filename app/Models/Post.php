@@ -15,6 +15,13 @@ class Post extends Model
     {
         return 'slug';
     }
+    public function scopeFilter($query, array $filters)
+    {
+        if ($search = $filters['search'] ?? false)
+            $query
+                ->where('title', 'like', "%$search%")
+                ->orWhere('body', 'like', "%$search%");
+    }
 
     public function category()
     {
