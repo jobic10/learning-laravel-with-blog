@@ -20,13 +20,13 @@ use App\Models\User;
 Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get('post/{post}', [PostController::class, 'show']);
 
-Route::get('/category/{category:slug}', function (Category $category) {
-    return view('posts', [
-        'posts' => $category->posts,
-        'currentCategory' => $category,
-        'categories' => Category::all()
-    ]);
-})->name('category');
+// Route::get('/category/{category:slug}', function (Category $category) {
+//     return view('posts', [
+//         'posts' => $category->posts,
+//         'currentCategory' => $category,
+//         'categories' => Category::all()
+//     ]);
+// })->name('category');
 
 Route::get('/user/{author:username}', function (User $author) {
     return view('posts', [
