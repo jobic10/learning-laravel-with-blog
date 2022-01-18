@@ -19,8 +19,8 @@ use App\Models\User;
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 Route::get('post/{post}', [PostController::class, 'show']);
-Route::get('/user/{author:username}', function (User $author) {
-    return view('posts', [
+Route::get('/author/{author:username}', function (User $author) {
+    return view('posts.index', [
         'posts' => $author->posts,
     ]);
 });
