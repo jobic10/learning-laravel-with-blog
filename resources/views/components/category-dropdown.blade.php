@@ -10,6 +10,7 @@
 
     @foreach ($categories as $category)
     <x-dropdown-item :active="request()->getRequestUri() == ('/?category='.$category->slug ?? false)"
-        href="/?category={{ $category->slug }}">{{ ucwords($category->name) }}</x-dropdown-item>
+        href="/?category={{ $category->slug }}&{{ http_build_query(request()->except('category')) }}">{{
+        ucwords($category->name) }}</x-dropdown-item>
     @endforeach
 </x-dropdown>
