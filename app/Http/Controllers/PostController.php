@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::latest()->filter(request()->only(['search', 'category']));
+        $posts = Post::latest()->filter(request()->only(['search', 'category', 'author']));
 
 
         return view('posts.index', [
