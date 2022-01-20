@@ -1,4 +1,5 @@
 @extends('layout')
+@section('content')
 @include('posts._header')
 
 <main class="max-w-6xl mx-auto mt-6 space-y-6 lg:mt-20">
@@ -9,3 +10,4 @@
     <p class="text-center">No posts yet. Check back later!</p>
     @endif
 </main>
+@endsection

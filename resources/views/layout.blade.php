@@ -17,9 +17,12 @@
                 </a>
             </div>
 
-            <div class="mt-8 md:mt-0">
-                <a href="/" class="text-xs font-bold uppercase">Home Page</a>
-
+            <div class="mt-8 md:mt-0 flex items-center">
+                @guest
+                <a href="/register" class="text-xs font-bold uppercase">Register</a>
+                @else
+                <span class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+                @endguest
                 <a href="#" class="px-5 py-3 ml-3 text-xs font-semibold text-white uppercase bg-blue-500 rounded-full">
                     Subscribe for Updates
                 </a>
