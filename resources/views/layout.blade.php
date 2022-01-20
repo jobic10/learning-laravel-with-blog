@@ -20,8 +20,11 @@
             <div class="mt-8 md:mt-0 flex items-center">
                 @guest
                 <a href="/register" class="text-xs font-bold uppercase">Register</a>
+                <a href="/login" class="ml-6 text-xs font-bold uppercase">Login</a>
                 @else
                 <span class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+                <form action="/logout" class="text-xs font-semibold text-blue-500 ml-6" method="post">@csrf <button
+                        type="submit">Log out</button> </form>
                 @endguest
                 <a href="#" class="px-5 py-3 ml-3 text-xs font-semibold text-white uppercase bg-blue-500 rounded-full">
                     Subscribe for Updates
