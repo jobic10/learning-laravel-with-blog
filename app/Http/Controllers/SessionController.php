@@ -24,6 +24,7 @@ class SessionController extends Controller
             'password' =>  ['required']
         ]);
         if (auth()->attempt($attributes)) {
+            session()->regenerate();
             return redirect('/')->with('success', 'Welcome back');
         }
         throw ValidationException::withMessages(['email' => 'Credentials not valid']);
