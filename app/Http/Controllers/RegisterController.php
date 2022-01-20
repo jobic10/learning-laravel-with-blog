@@ -24,7 +24,6 @@ class RegisterController extends Controller
             'password' => 'required|',
         ]);
         User::create($attributes);
-        session()->flash('success', 'Account created');
-        return redirect('/');
+        return redirect('/')->with('success', 'Account created');;
     }
 }
