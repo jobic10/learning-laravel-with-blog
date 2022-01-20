@@ -11,4 +11,20 @@ class SessionController extends Controller
         auth()->logout();
         return redirect('/')->with('success', 'You are now logged out');
     }
+
+    public function create()
+    {
+        return view('session.create');
+    }
+    public function store()
+    {
+        $attributes = request()->validate([
+            'email' => ['required', 'email'],
+            'password' =>  ['required']
+        ]);
+        if (auth()->attempt($attributes)) {
+            return redirect('/')->with('success', 'Welcome back');
+        }
+        return back()->withInput()->withErrors(['email' => 'Your provided credentials could not be verified']);
+    }
 }
