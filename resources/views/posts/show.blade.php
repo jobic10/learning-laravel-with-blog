@@ -43,24 +43,10 @@
                 <h1 class="font-bold text-3xl lg:text-4xl mb-10">{{ $post->title }}</h1>
                 <div class="space-y-4 lg:text-lg leading-loose">{!! $post->body !!}</div>
             </div>
-            <section class="col-span-8 col-start-5 mt-10">
-                <article class="flex bg-gray-100 p-6 rounded-xl border border-gray-200 space-x-4">
-                    <div class="flex-shrink-0">
-                        <img src="https://i.pravatar.cc/60" width="60" height="60" class="rounded-xl" srcset="">
-                    </div>
-                    <div class="">
-                        <header class="mb-4">
-                            <h3 class="font-bold">John Doe</h3>
-                            <p class="text-xs">Posted <time>8 months ago</time></p>
-                        </header>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolore voluptate deleniti.
-                            Quibusdam modi obcaecati dolor aut nisi ullam laboriosam quidem odit numquam placeat ex sint
-                            doloremque, nesciunt nemo, vitae vero deleniti beatae, cupiditate assumenda labore! Harum,
-                            molestiae mollitia? Magni.
-                        </p>
-                    </div>
-                </article>
+            <section class="col-span-8 col-start-5 mt-10 space-y-6">
+                <x-post-comment />
+                <x-post-comment />
+                <x-post-comment />
             </section>
 
         </article>
