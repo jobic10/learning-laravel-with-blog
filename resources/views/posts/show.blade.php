@@ -44,6 +44,23 @@
                 <div class="space-y-4 lg:text-lg leading-loose">{!! $post->body !!}</div>
             </div>
             <section class="col-span-8 col-start-5 mt-10 space-y-6">
+                <form action="" method="post" class="border border-gray-200 p-6 rounded-xl">
+                    @csrf
+                    <header class="flex items-center">
+                        <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}" width="40" height="40"
+                            class="rounded-full">
+                        <h2 class="ml-4">Wanna participate?</h2>
+                    </header>
+                    <div class="mt-6">
+                        <textarea name="body" placeholder="Quick, think of something to say"
+                            class="w-full text-sm focus:outline-none p-3 focus:ring" id="" cols="30"
+                            rows="5"></textarea>
+                    </div>
+                    <div class="flex justify-end mt-6 border border-gray-200 pt-6">
+                        <button type="submit"
+                            class="bg-blue-500 text-white font-semibold text-xs px-10 py-2 rounded-2xl uppercase hover:bg-blue-800">Post</button>
+                    </div>
+                </form>
                 @foreach ($post->comments as $comment)
                 <x-post-comment :comment="$comment" />
                 @endforeach
