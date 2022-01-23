@@ -57,7 +57,7 @@
                                 class="w-full text-sm focus:outline-none p-3 focus:ring" id="" cols="30"
                                 rows="5"></textarea>
                         </div>
-                        <div class="flex justify-end mt-6 border border-gray-200 pt-6">
+                        <div class="flex justify-end mt-6 border-t border-gray-200 pt-6">
                             <button type="submit"
                                 class="bg-blue-500 text-white font-semibold text-xs px-10 py-2 rounded-2xl uppercase hover:bg-blue-800">Post</button>
                         </div>
