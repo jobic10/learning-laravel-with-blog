@@ -45,7 +45,7 @@
             </div>
             <section class="col-span-8 col-start-5 mt-10 space-y-6">
                 <x-panel>
-                    <form action="" method="post" class="">
+                    <form action="/post/{{ $post->slug }}/comments" method="post" class="">
                         @csrf
                         <header class="flex items-center">
                             <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}" width="40" height="40"
