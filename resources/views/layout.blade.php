@@ -7,6 +7,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js"
     integrity="sha512-Atu8sttM7mNNMon28+GHxLdz4Xo2APm1WVHwiLW9gW4bmHpHc/E2IbXrj98SmefTmbqbUTOztKl5PDPiu0LD/A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
 
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-8">
@@ -26,7 +31,8 @@
                 <form action="/logout" class="text-xs font-semibold text-blue-500 ml-6" method="post">@csrf <button
                         type="submit">Log out</button> </form>
                 @endguest
-                <a href="#" class="px-5 py-3 ml-3 text-xs font-semibold text-white uppercase bg-blue-500 rounded-full">
+                <a href="#newsletter"
+                    class="px-5 py-3 ml-3 text-xs font-semibold text-white uppercase bg-blue-500 rounded-full">
                     Subscribe for Updates
                 </a>
             </div>
@@ -35,7 +41,8 @@
         @yield('content')
 
 
-        <footer class="px-10 py-16 mt-16 text-center bg-gray-100 border border-black border-opacity-5 rounded-xl">
+        <footer id='newsletter'
+            class="px-10 py-16 mt-16 text-center bg-gray-100 border border-black border-opacity-5 rounded-xl">
             <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
             <p class="mt-3 text-sm">Promise to keep the inbox clean. No bugs.</p>
