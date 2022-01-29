@@ -37,9 +37,14 @@ Route::post('newsletter', function () {
         'apiKey' => config('services.mailchimp.key'),
         'server' => 'us14'
     ]);
-    $response = $mailchimp->lists->addListMember('0b5af88649', [
-        'email_address' => request('email'),
-        'status' => 'subscribed'
-    ]);
+    try {
+
+        $response = $mailchimp->lists->addListMember('0b5af88649', [
+            'email_address' => request('email'),
+            'status' => 'subscribed'
+        ]);
+    } catch (\Exception $e) {
+        throw \Illuminate\Validation\ValidationException::withMessages(['email' => 'Invalid email']);
+    }
     return redirect('/')->with('success', 'You are now subscribed');
 });
