@@ -28,15 +28,18 @@ Route::post('sessions', [SessionController::class, 'store'])->middleware('guest'
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
-Route::get('ping', function () {
+Route::post('newsletter', function () {
+    request()->validate([
+        'email' => 'required|email'
+    ]);
     $mailchimp = new \MailchimpMarketing\ApiClient();
     $mailchimp->setConfig([
         'apiKey' => config('services.mailchimp.key'),
         'server' => 'us14'
     ]);
     $response = $mailchimp->lists->addListMember('0b5af88649', [
-        'email_address' => 'jobowo@gmail.com',
+        'email_address' => request('email'),
         'status' => 'subscribed'
     ]);
-    dd($response);
+    return redirect('/')->with('success', 'You are now subscribed');
 });
