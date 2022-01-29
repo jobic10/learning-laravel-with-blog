@@ -34,6 +34,9 @@ Route::get('ping', function () {
         'apiKey' => config('services.mailchimp.key'),
         'server' => 'us14'
     ]);
-    $response = $mailchimp->ping->get();
-    print_r($response);
+    $response = $mailchimp->lists->addListMember('0b5af88649', [
+        'email_address' => 'jobowo@gmail.com',
+        'status' => 'subscribed'
+    ]);
+    dd($response);
 });
