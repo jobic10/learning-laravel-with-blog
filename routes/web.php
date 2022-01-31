@@ -28,3 +28,4 @@ Route::get('register', [RegisterController::class, 'create'])->middleware('guest
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
 Route::post('newsletter', NewsletterController::class);
+Route::get('admin/posts/create', [PostController::class, 'create']);
