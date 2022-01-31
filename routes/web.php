@@ -36,9 +36,7 @@ Route::post('newsletter', function () {
     ]);
 
     try {
-
-        $newsletter = new Newsletter();
-        $newsletter->subscribe(request('email'));
+        (new Newsletter())->subscribe(request('email'));
     } catch (\Exception $e) {
         throw ValidationException::withMessages(['email' => 'Invalid email']);
     }
