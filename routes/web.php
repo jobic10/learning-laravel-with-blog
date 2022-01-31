@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
@@ -7,7 +8,6 @@ use App\Http\Controllers\SessionController;
 use App\Services\Newsletter;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,15 +27,4 @@ Route::post('sessions', [SessionController::class, 'store'])->middleware('guest'
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
-Route::post('newsletter', function (Newsletter $newsletter) {
-    request()->validate([
-        'email' => 'required|email'
-    ]);
-
-    try {
-        $newsletter->subscribe(request('email'));
-    } catch (\Exception $e) {
-        throw ValidationException::withMessages(['email' => 'Invalid email']);
-    }
-    return redirect('/')->with('success', 'You are now subscribed');
-});
+Route::post('newsletter', NewsletterController::class);
