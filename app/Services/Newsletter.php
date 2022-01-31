@@ -10,16 +10,18 @@ class Newsletter
     public function subscribe($email, string  $list = null)
     {
         $list ??= config('services.mailchimp.lists.subscribers');
-        $mailchimp = new ApiClient();
-        $mailchimp->setConfig([
-            'apiKey' => config('services.mailchimp.key'),
-            'server' => 'us14'
-        ]);
 
         return
-            $mailchimp->lists->addListMember($list, [
+            $this->client()->lists->addListMember($list, [
                 'email_address' => $email,
                 'status' => 'subscribed'
             ]);
+    }
+    protected function client()
+    {
+        return (new ApiClient())->setConfig([
+            'apiKey' => config('services.mailchimp.key'),
+            'server' => 'us14'
+        ]);
     }
 }
