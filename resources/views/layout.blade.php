@@ -21,13 +21,19 @@
                     <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
                 </a>
             </div>
-
             <div class="mt-8 md:mt-0 flex items-center">
                 @guest
                 <a href="/register" class="text-xs font-bold uppercase">Register</a>
                 <a href="/login" class="ml-6 text-xs font-bold uppercase">Login</a>
                 @else
-                <span class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}!</span>
+                <x-dropdown>
+                    <x-slot name='trigger'>
+                        <button class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}!</button>
+                    </x-slot>
+                    <x-dropdown-item href='/admin/posts/dashboard'>Dashboard</x-dropdown-item>
+                    <x-dropdown-item href='/admin/posts/create' :active="request()->is('admin/posts/create')">New post
+                    </x-dropdown-item>
+                </x-dropdown>
                 <form action="/logout" class="text-xs font-semibold text-blue-500 ml-6" method="post">@csrf <button
                         type="submit">Log out</button> </form>
                 @endguest

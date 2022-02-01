@@ -11,7 +11,7 @@
             <x-form.input name='thumbnail' type='file' />
             <x-form.textarea name='body' />
 
-            <div class="mb-6">
+            <x-form.field>
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="body">Category</label>
                 <select name="category_id" class="border border-gray-400 p-2 w-full">
                     @foreach (\App\Models\Category::all() as $category)
@@ -20,10 +20,8 @@
                     </option>
                     @endforeach
                 </select>
-                @error('category')
-                <small class="text-red-500 text-xs-2">{{ $message }}</small>
-                @enderror
-            </div>
+                <x-form.error name="category" />
+            </x-form.field>
             <button type="submit"
                 class="px-8 py-3 mt-4 text-xs font-semibold text-white uppercase transition-colors duration-300 bg-blue-500 rounded-full hover:bg-blue-600 lg:mt-0 lg:ml-3">
                 Publish
