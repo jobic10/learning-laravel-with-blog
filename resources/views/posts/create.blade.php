@@ -5,31 +5,13 @@
     <form action="/admin/posts" method="post" enctype="multipart/form-data">
         @csrf
         <x-panel>
-            <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="title">Title</label>
-                <input class="border border-gray-400 p-2 w-full" type="text" value="{{ old('title') }}"
-                    class="form-control" name="title" id="title" required placeholder="Title">
-                @error('title')
-                <small class="text-red-500 text-xs-2">{{ $message }}</small>
-                @enderror
-            </div>
+            <x-form.input name='title' />
+            <x-form.input name='slug' />
+            <x-form.input name='excerpt' />
+            <x-form.input name='thumbnail' type='file' />
 
-            <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="title">Excerpt</label>
-                <input class="border border-gray-400 p-2 w-full" type="text" value="{{ old('excerpt') }}"
-                    class="form-control" name="excerpt" id="excerpt" required placeholder="Excerpt">
-                @error('excerpt')
-                <small class="text-red-500 text-xs-2">{{ $message }}</small>
-                @enderror
-            </div>
-            <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="title">Slug</label>
-                <input value="{{ old('slug') }}" class="border border-gray-400 p-2 w-full" type="text"
-                    class="form-control" name="slug" id="slug" required placeholder="Slug">
-                @error('slug')
-                <small class="text-red-500 text-xs-2">{{ $message }}</small>
-                @enderror
-            </div>
+
+
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="body">Body</label>
                 <textarea class="border border-gray-400 p-2 w-full" class="form-control" name="body" id="body"
@@ -48,14 +30,6 @@
                     @endforeach
                 </select>
                 @error('category')
-                <small class="text-red-500 text-xs-2">{{ $message }}</small>
-                @enderror
-            </div>
-            <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="body">Thumbnail</label>
-                <input value="{{ old('slug') }}" class="border border-gray-400 p-2 w-full" type="file"
-                    class="form-control" name="thumbnail" id="slug" required placeholder="Slug">
-                @error('body')
                 <small class="text-red-500 text-xs-2">{{ $message }}</small>
                 @enderror
             </div>
