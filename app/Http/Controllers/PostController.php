@@ -28,8 +28,12 @@ class PostController extends Controller
     {
         return view('posts.create');
     }
-    public function store()
+    public function store(Request $request)
     {
+        $path = request()->file('thumbnail')->store('thumbnails');
+        return "Done $path";
+        ddd(request()->all());
+
         $attributes = request()->validate([
             'title' => 'required',
             'excerpt' => 'required',
