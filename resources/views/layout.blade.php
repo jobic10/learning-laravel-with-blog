@@ -33,9 +33,10 @@
                     <x-dropdown-item href='/admin/posts/dashboard'>Dashboard</x-dropdown-item>
                     <x-dropdown-item href='/admin/posts/create' :active="request()->is('admin/posts/create')">New post
                     </x-dropdown-item>
+                    <x-dropdown-item x-data="{}" @click.prevent="document.querySelector('#logoutForm').submit()"
+                        href='#'>Log out</x-dropdown-item>
                 </x-dropdown>
-                <form action="/logout" class="text-xs font-semibold text-blue-500 ml-6" method="post">@csrf <button
-                        type="submit">Log out</button> </form>
+                <form action="/logout" id='logoutForm' class="hidden" method="post">@csrf</form>
                 @endguest
                 <a href="#newsletter"
                     class="px-5 py-3 ml-3 text-xs font-semibold text-white uppercase bg-blue-500 rounded-full">
