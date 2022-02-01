@@ -23,6 +23,14 @@
                 @enderror
             </div>
             <div class="mb-6">
+                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="title">Slug</label>
+                <input class="border border-gray-400 p-2 w-full" type="text" class="form-control" name="slug" id="slug"
+                    required placeholder="Slug">
+                @error('slug')
+                <small class="text-red-500 text-xs-2">{{ $message }}</small>
+                @enderror
+            </div>
+            <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="body">Body</label>
                 <textarea class="border border-gray-400 p-2 w-full" class="form-control" name="body" id="body"
                     required></textarea>
