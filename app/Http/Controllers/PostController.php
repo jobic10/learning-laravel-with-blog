@@ -41,5 +41,6 @@ class PostController extends Controller
         ]);
         $attributes['user_id'] = auth()->id();
         Post::create($attributes);
+        return redirect('/')->with('success', 'New post created');
     }
 }
