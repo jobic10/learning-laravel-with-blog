@@ -7,8 +7,8 @@
         <x-panel class="max-w-sm mx-auto">
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="title">Title</label>
-                <input class="border border-gray-400 p-2 w-full" type="text" class="form-control" name="title"
-                    id="title" required placeholder="Title">
+                <input class="border border-gray-400 p-2 w-full" type="text" value="{{ old('title') }}"
+                    class="form-control" name="title" id="title" required placeholder="Title">
                 @error('title')
                 <small class="text-red-500 text-xs-2">{{ $message }}</small>
                 @enderror
@@ -16,16 +16,16 @@
 
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="title">Excerpt</label>
-                <input class="border border-gray-400 p-2 w-full" type="text" class="form-control" name="excerpt"
-                    id="excerpt" required placeholder="Excerpt">
+                <input class="border border-gray-400 p-2 w-full" type="text" value="{{ old('excerpt') }}"
+                    class="form-control" name="excerpt" id="excerpt" required placeholder="Excerpt">
                 @error('excerpt')
                 <small class="text-red-500 text-xs-2">{{ $message }}</small>
                 @enderror
             </div>
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="title">Slug</label>
-                <input class="border border-gray-400 p-2 w-full" type="text" class="form-control" name="slug" id="slug"
-                    required placeholder="Slug">
+                <input value="{{ old('slug') }}" class="border border-gray-400 p-2 w-full" type="text"
+                    class="form-control" name="slug" id="slug" required placeholder="Slug">
                 @error('slug')
                 <small class="text-red-500 text-xs-2">{{ $message }}</small>
                 @enderror
@@ -33,7 +33,7 @@
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="body">Body</label>
                 <textarea class="border border-gray-400 p-2 w-full" class="form-control" name="body" id="body"
-                    required></textarea>
+                    required>{{ old('body') }}</textarea>
                 @error('body')
                 <small class="text-red-500 text-xs-2">{{ $message }}</small>
                 @enderror
@@ -42,7 +42,9 @@
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="body">Category</label>
                 <select name="category_id" id="">
                     @foreach (\App\Models\Category::all() as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    <option value="{{ $category->id }}" {{ old('category_id')==$category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
                     @endforeach
                 </select>
                 @error('category')
