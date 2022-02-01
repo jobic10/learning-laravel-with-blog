@@ -18,7 +18,7 @@ class MustBeAdmin
     public function handle(Request $request, Closure $next)
     {
         if (auth()->user()?->username != 'admin')
-            abort(Response::HTTP_BAD_REQUEST);
+            abort(403);
         return $next($request);
     }
 }
